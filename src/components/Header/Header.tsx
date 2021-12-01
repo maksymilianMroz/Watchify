@@ -6,11 +6,11 @@ import classes from "./Header.module.scss";
 const Header = () => {
   return (
     <div className={classes.container}>
-      <div>
+      <div className={classes.menu}>
         <Hamburger /> <h3>Home</h3>
       </div>
-      <h1>Watchify</h1>
-      <div>
+      <h1 className={classes.logo}>Watchify</h1>
+      <div className={classes.tools}>
         <div>en</div>
         <div>x</div>
         <UserAvatar />

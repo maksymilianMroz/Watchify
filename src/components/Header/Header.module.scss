@@ -1,3 +1,31 @@
 .container {
   color: #000;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  div {
+    margin: 0 6px;
+  }
+}
+
+.logo {
+  margin: 0;
+  align-items: center;
+  display: flex;
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  div {
+    margin: 0 6px 0 0;
+  }
 }
