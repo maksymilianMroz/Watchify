@@ -1,0 +1,26 @@
+.searchBarList {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 24px 32px;
+  justify-content: space-between;
+}
+
+.listItem {
+}
+
+.button {
+  margin: 0 6px 0 0;
+  border-radius: 15px;
+  min-height: 36px;
+  min-width: 72px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #f4a618;
+  color: #000;
+  border: 3px solid black;
+  font-weight: bold;
+}
+
+.searchInput {
+}
