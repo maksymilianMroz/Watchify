@@ -4,15 +4,20 @@
   padding: 0;
   margin: 12px 32px;
   justify-content: space-between;
+  flex-direction: row;
 }
 
 .listItem {
+  display: flex;
 }
 
 .button {
   margin: 0 6px 0 6px;
   border-radius: 15px;
   min-height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-width: 72px;
   text-transform: capitalize;
   cursor: pointer;
@@ -21,10 +26,16 @@
   border: none;
   font-weight: bold;
   font-size: 12px;
+  text-decoration: none;
 
   &:nth-child(1) {
     color: #fff;
     margin: 0 6px 0 0;
+    background-color: #000;
+  }
+
+  &:hover {
+    color: #fff;
     background-color: #000;
   }
 }

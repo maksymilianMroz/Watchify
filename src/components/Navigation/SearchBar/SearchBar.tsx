@@ -6,7 +6,11 @@ const ItemCard = () => (
   <ul className={classes.searchBarList}>
     <li className={classes.listItem}>
       {buttonsArr.map((button) => {
-        return <button className={classes.button}>{button}</button>;
+        return (
+          <a href="#" className={classes.button}>
+            {button}
+          </a>
+        );
       })}
     </li>
     <li className={classes.listItem}>
