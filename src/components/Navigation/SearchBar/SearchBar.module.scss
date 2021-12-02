@@ -2,7 +2,7 @@
   list-style: none;
   display: flex;
   padding: 0;
-  margin: 24px 32px;
+  margin: 12px 32px;
   justify-content: space-between;
 }
 
@@ -14,13 +14,34 @@
   border-radius: 15px;
   min-height: 36px;
   min-width: 72px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   cursor: pointer;
-  background-color: #f4a618;
-  color: #000;
-  border: 3px solid black;
+  background-color: #fff;
+  color: #bbbdbc;
+  border: none;
   font-weight: bold;
+  font-size: 12px;
+
+  &:nth-child(1) {
+    color: #fff;
+    background-color: #000;
+  }
 }
 
 .searchInput {
+  min-height: 36px;
+  min-width: 272px;
+  border-radius: 15px;
+  border: none;
+  padding: 0 12px;
+
+  &::placeholder {
+    color: grey;
+  }
+}
+
+@media (max-width: 768px) {
+  .searchBarList {
+    flex-direction: column;
+  }
 }

@@ -10,7 +10,7 @@ const ItemCard = () => (
       })}
     </li>
     <li className={classes.listItem}>
-      <input className={classes.searchInput} type="text" />
+      <input className={classes.searchInput} type="text" placeholder="Search" />
     </li>
   </ul>
 );
