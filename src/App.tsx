@@ -1,13 +1,17 @@
 import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
 import SearchBar from "./components/Navigation/SearchBar/SearchBar";
 
 import "./App.css";
 
-const App = () => (
-  <div className="App">
-    <Header />
-    <SearchBar />
-  </div>
-);
+const App = () => {
+  return (
+    <div className="App">
+      <Header />
+      <SearchBar />
+      <Main />
+    </div>
+  );
+};
 
 export default App;
