@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className={classes.container}>
       <div className={classes.menu}>
-        <Hamburger /> <h3>Home</h3>
+        <Hamburger /> <h3 className={classes.currentSite}>Home</h3>
       </div>
       <h1 className={classes.logo}>Watchify</h1>
       <div className={classes.tools}>
