@@ -1,4 +1,4 @@
-import Filters from "../Navigation/Filters/Filters";
+import Filters from "../Filters/Filters";
 
 import classes from "./Main.module.scss";
 

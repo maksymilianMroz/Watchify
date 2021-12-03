@@ -1,6 +1,6 @@
 import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
-import SearchBar from "./components/Navigation/SearchBar/SearchBar";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 import "./App.css";
 
