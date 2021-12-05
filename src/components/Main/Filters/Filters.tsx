@@ -15,8 +15,8 @@ const Filters = () => (
   <div className={classes.container}>
     <h3 className={classes.header}>Genre</h3>
     <ul className={classes.genreList}>
-      {tempArr.map((item) => (
-        <li className={classes.genreListItem}>
+      {tempArr.map((item, index) => (
+        <li key={index} className={classes.genreListItem}>
           <button className={classes.filterButton}>{item}</button>
         </li>
       ))}

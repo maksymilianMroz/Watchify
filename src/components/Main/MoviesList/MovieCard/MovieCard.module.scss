@@ -1,0 +1,32 @@
+.card {
+  //   background-color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 140px;
+  min-height: 240px;
+  padding: 12px 24px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.favorites {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cardBody {
+  padding: 6px 0;
+  height: auto;
+  background-color: #fff;
+  width: 100%;
+  border-radius: 15px;
+}
+
+.movieTitle {
+  text-align: center;
+  margin: 0;
+  max-width: 140px;
+}

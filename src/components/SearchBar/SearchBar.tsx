@@ -2,21 +2,24 @@ import classes from "./SearchBar.module.scss";
 
 const buttonsArr: string[] = ["row", "of", "buttons", "that", "do", "nothing"];
 
-const ItemCard = () => (
+const SearchBar = () => (
   <ul className={classes.searchBarList}>
-    <li className={classes.listItem}>
-      {buttonsArr.map((button) => {
+    <div className={classes.listItems}>
+      {buttonsArr.map((button, index) => {
         return (
-          <a href="#" className={classes.button}>
-            {button}
-          </a>
+          // eslint-disable-next-line jsx-a11y/anchor-is-valid
+          <li key={index} className={classes.listItem}>
+            <a href="#" className={classes.button}>
+              {button}
+            </a>
+          </li>
         );
       })}
-    </li>
-    <li className={classes.listItem}>
+    </div>
+    <li className={classes.listItems}>
       <input className={classes.searchInput} type="text" placeholder="Search" />
     </li>
   </ul>
 );
 
-export default ItemCard;
+export default SearchBar;

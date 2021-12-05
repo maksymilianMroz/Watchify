@@ -2,12 +2,15 @@ import Filters from "./Filters/Filters";
 import MoviesList from "./MoviesList/MoviesList";
 
 import classes from "./Main.module.scss";
+import { MoviesProps } from "../../App";
 
-const Main = () => (
-  <div className={classes.container}>
-    <Filters />
-    <MoviesList />
-  </div>
-);
+const Main = ({ movies }: MoviesProps) => {
+  return (
+    <div className={classes.container}>
+      <Filters />
+      <MoviesList movies={movies} />
+    </div>
+  );
+};
 
 export default Main;

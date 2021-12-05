@@ -23,7 +23,7 @@ const MainCards = () => {
           <img
             className={classes.movieImg}
             src="https://is1-ssl.mzstatic.com/image/thumb/Video123/v4/2a/12/d8/2a12d8e6-28d0-5db7-9503-068582efdc77/pr_source.lsr/113x370bb.png"
-            alt="Logo"
+            alt="movie"
           />
         </div>
       </div>

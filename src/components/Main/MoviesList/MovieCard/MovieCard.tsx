@@ -1,7 +1,20 @@
+import { AppProps } from "../../../../App";
 import classes from "./MovieCard.module.scss";
 
-const MovieCard = () => {
-  return <div className={classes.card}>test</div>;
+const MovieCard = ({ title, image, summary, trailer, genre }: AppProps) => {
+  return (
+    <div
+      className={classes.card}
+      style={{
+        backgroundImage: "url(" + image + ")",
+      }}
+    >
+      <div className={classes.favorites}>x</div>
+      <div className={classes.cardBody}>
+        <p className={classes.movieTitle}>{title}</p>
+      </div>
+    </div>
+  );
 };
 
 export default MovieCard;

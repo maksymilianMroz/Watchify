@@ -1,18 +1,25 @@
+import { useEffect, useState } from "react";
+import { MoviesProps } from "../../../App";
 import MainCards from "./MainCards/MainCards";
 import MovieCard from "./MovieCard/MovieCard";
 
 import classes from "./MoviesList.module.scss";
 
-const tempArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+const MoviesList = ({ movies }: MoviesProps) => {
+  const [moviesList, setMoviesList] = useState(movies);
 
-const MoviesList = () => {
+  useEffect(() => {
+    setMoviesList(movies);
+  });
+
   return (
     <div>
+      {console.log(moviesList)}
       <MainCards />
       <ul className={classes.moviesList}>
-        {tempArr.map((item) => (
+        {moviesList.map((item) => (
           <li className={classes.movieCard}>
-            <MovieCard />
+            <MovieCard {...item} />
           </li>
         ))}
       </ul>
