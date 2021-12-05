@@ -28,7 +28,13 @@ const MainCards = () => {
         </div>
       </div>
 
-      <div className={classes.trailerCard}>test</div>
+      <div className={classes.trailerCard}>
+        <video
+          src="https://www.youtube.com/watch?v=Nt9L1jCKGnE"
+          width="200"
+          height="100"
+        />
+      </div>
     </div>
   );
 };
