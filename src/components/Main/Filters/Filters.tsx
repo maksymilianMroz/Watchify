@@ -8,8 +8,9 @@ const Filters: React.FC<{
 }> = (props) => {
   const [genres, setGenres] = useState<string[]>([]);
 
-  let tempArr: string[] = [];
   useEffect(() => {
+    let tempArr: string[] = [];
+
     if (!genres.length) {
       props.movies.forEach((item) => {
         if (!tempArr.includes(item.genre)) {
@@ -18,7 +19,7 @@ const Filters: React.FC<{
       });
       setGenres(tempArr);
     }
-  }, [props.movies]);
+  }, [props.movies, genres.length]);
 
   const handleFilterChange = (e: React.MouseEvent) => {
     const target = e.target as Element;
