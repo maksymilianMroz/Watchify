@@ -15,6 +15,7 @@ export interface MovieProps {
 
 const App = () => {
   const [movies, setMovies] = useState<MovieProps[] | []>([]);
+  const [activeGenre, setActiveGenre] = useState<string | null>("all");
   // const [isLoading, setIsLoading] = useState<boolean>(false);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -40,11 +41,19 @@ const App = () => {
     fetchMoviesHandler();
   }, [movies]);
 
+  const onFilterChangeHandler = (data: string | null): void => {
+    setActiveGenre(data);
+  };
+
+  useEffect(() => {
+    console.log(activeGenre);
+  }, [activeGenre]);
+
   return (
     <div className="App">
       <Header />
       <SearchBar />
-      <Main movies={movies} />
+      <Main movies={movies} onclick={(e) => onFilterChangeHandler(e)} />
     </div>
   );
 };
