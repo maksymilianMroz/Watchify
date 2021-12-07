@@ -1,6 +1,6 @@
-import classes from "./MainCards.module.scss";
+import classes from "./MainCard.module.scss";
 
-const MainCards = () => {
+const MainCard = () => {
   return (
     <div className={classes.container}>
       <div className={classes.mainCard}>
@@ -27,16 +27,8 @@ const MainCards = () => {
           />
         </div>
       </div>
-
-      <div className={classes.trailerCard}>
-        <video
-          src="https://www.youtube.com/watch?v=Nt9L1jCKGnE"
-          width="200"
-          height="100"
-        />
-      </div>
     </div>
   );
 };
 
-export default MainCards;
+export default MainCard;

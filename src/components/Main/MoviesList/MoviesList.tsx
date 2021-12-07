@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MovieProps } from "../../../App";
-import MainCards from "./MainCards/MainCards";
+import MainCards from "./MainCards/MainCard";
 import MovieCard from "./MovieCard/MovieCard";
 
 import classes from "./MoviesList.module.scss";

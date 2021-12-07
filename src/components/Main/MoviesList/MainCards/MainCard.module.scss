@@ -4,7 +4,7 @@
 }
 
 .mainCard {
-  width: 65%;
+  width: 100%;
   height: fit-content;
   display: flex;
   margin-right: 32px;
@@ -62,13 +62,4 @@
     justify-content: center;
     align-items: center;
   }
-}
-
-.trailerCard {
-  width: 35%;
-  height: 300px;
-  background: #fff;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
 }
