@@ -17,6 +17,7 @@ const App = () => {
   const [movies, setMovies] = useState<MovieProps[] | []>([]);
   // const [isLoading, setIsLoading] = useState<boolean>(false);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchMoviesHandler = async () => {
     const response = await fetch(
       "https://itunes.apple.com/us/rss/topmovies/limit=100/json"
@@ -37,7 +38,7 @@ const App = () => {
 
   useEffect(() => {
     fetchMoviesHandler();
-  }, []);
+  }, [movies]);
 
   return (
     <div className="App">

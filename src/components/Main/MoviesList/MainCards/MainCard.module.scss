@@ -7,7 +7,6 @@
   width: 100%;
   height: fit-content;
   display: flex;
-  margin-right: 32px;
 
   .left {
     width: 60%;
@@ -61,5 +60,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }
