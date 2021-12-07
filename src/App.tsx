@@ -5,7 +5,7 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import "./App.css";
 import { useEffect, useState } from "react";
 
-export interface AppProps {
+export interface MovieProps {
   title: string;
   image: string;
   summary: string;
@@ -13,18 +13,8 @@ export interface AppProps {
   genre: string;
 }
 
-export interface MoviesProps {
-  movies: {
-    title: string;
-    image: string;
-    summary: string;
-    trailer: string;
-    genre: string;
-  }[];
-}
-
 const App = () => {
-  const [movies, setMovies] = useState<AppProps[] | []>([]);
+  const [movies, setMovies] = useState<MovieProps[] | []>([]);
   // const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchMoviesHandler = async () => {

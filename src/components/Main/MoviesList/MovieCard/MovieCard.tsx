@@ -1,7 +1,7 @@
-import { AppProps } from "../../../../App";
+import { MovieProps } from "../../../../App";
 import classes from "./MovieCard.module.scss";
 
-const MovieCard = ({ title, image, summary, trailer, genre }: AppProps) => {
+const MovieCard = ({ title, image, summary, trailer, genre }: MovieProps) => {
   return (
     <div
       className={classes.card}
