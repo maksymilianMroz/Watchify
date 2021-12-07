@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MovieProps } from "../../../App";
-import classes from "./Filters.module.scss";
+import styles from "./Filters.module.scss";
 
 const Filters: React.FC<{
   movies: MovieProps[];
@@ -26,12 +26,12 @@ const Filters: React.FC<{
   };
 
   return (
-    <div className={classes.container}>
-      <h3 className={classes.header}>Genres</h3>
-      <ul className={classes.genreList}>
-        <li key={1.1} className={classes.genreListItem}>
+    <div className={styles.container}>
+      <h3 className={styles.header}>Genres</h3>
+      <ul className={styles.genreList}>
+        <li key={1.1} className={styles.genreListItem}>
           <button
-            className={classes.filterButton}
+            className={styles.filterButton}
             data-filter="All"
             onClick={handleFilterChange}
           >
@@ -39,9 +39,9 @@ const Filters: React.FC<{
           </button>
         </li>
         {genres.map((item, index) => (
-          <li key={index} className={classes.genreListItem}>
+          <li key={index} className={styles.genreListItem}>
             <button
-              className={classes.filterButton}
+              className={styles.filterButton}
               data-filter={item}
               onClick={handleFilterChange}
             >

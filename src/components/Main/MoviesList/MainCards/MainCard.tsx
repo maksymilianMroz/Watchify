@@ -1,23 +1,23 @@
 import { MovieProps } from "../../../../App";
-import classes from "./MainCard.module.scss";
+import styles from "./MainCard.module.scss";
 
 const MainCard: React.FC<{ movies: MovieProps[] }> = (props) => {
   return props.movies.length ? (
-    <div className={classes.container}>
-      <div className={classes.mainCard}>
-        <div className={classes.left}>
-          <div className={classes.titleGroup}>
-            <h2 className={classes.header}>{props.movies[0].title}</h2>
-            <p className={classes.description}>{props.movies[0].summary}</p>
+    <div className={styles.container}>
+      <div className={styles.mainCard}>
+        <div className={styles.left}>
+          <div className={styles.titleGroup}>
+            <h2 className={styles.header}>{props.movies[0].title}</h2>
+            <p className={styles.description}>{props.movies[0].summary}</p>
           </div>
-          <div className={classes.btnGroup}>
-            <button className={classes.btnWatch}>Obejrzyj</button>
-            <button className={classes.btnInfo}>More info</button>
+          <div className={styles.btnGroup}>
+            <button className={styles.btnWatch}>Obejrzyj</button>
+            <button className={styles.btnInfo}>More info</button>
           </div>
-          <div className={classes.additionalBar}></div>
+          <div className={styles.additionalBar}></div>
         </div>
         <div
-          className={classes.right}
+          className={styles.right}
           style={{
             backgroundImage: "url(" + props.movies[0].image + ")",
           }}

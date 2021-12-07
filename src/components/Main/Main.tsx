@@ -1,6 +1,6 @@
 import MoviesList from "./MoviesList/MoviesList";
 
-import classes from "./Main.module.scss";
+import styles from "./Main.module.scss";
 import { MovieProps } from "../../App";
 
 const Main: React.FC<{
@@ -8,7 +8,7 @@ const Main: React.FC<{
   onclick: (data: string | null) => void;
 }> = (props) => {
   return (
-    <div className={classes.container}>
+    <div className={styles.container}>
       <MoviesList movies={props.movies} onclick={props.onclick} />
     </div>
   );

@@ -1,17 +1,17 @@
 import { MovieProps } from "../../../../App";
-import classes from "./MovieCard.module.scss";
+import styles from "./MovieCard.module.scss";
 
 const MovieCard = ({ title, image, summary, trailer, genre }: MovieProps) => {
   return (
     <div
-      className={classes.card}
+      className={styles.card}
       style={{
         backgroundImage: "url(" + image + ")",
       }}
     >
-      <div className={classes.favorites}>x</div>
-      <div className={classes.cardBody}>
-        <p className={classes.movieTitle}>{title}</p>
+      <div className={styles.favorites}>x</div>
+      <div className={styles.cardBody}>
+        <p className={styles.movieTitle}>{title}</p>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
-import classes from "./Hamburger.module.scss";
+import styles from "./Hamburger.module.scss";
 
 const Hamburger = () => (
-  <div className={classes.ham}>
-    <span className={classes.hamLine}></span>
-    <span className={classes.hamLine}></span>
-    <span className={classes.hamLine}></span>
+  <div className={styles.ham}>
+    <span className={styles.hamLine}></span>
+    <span className={styles.hamLine}></span>
+    <span className={styles.hamLine}></span>
   </div>
 );
 

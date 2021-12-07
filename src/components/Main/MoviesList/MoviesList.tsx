@@ -3,7 +3,7 @@ import Filters from "../Filters/Filters";
 import MainCard from "./MainCards/MainCard";
 import MovieCard from "./MovieCard/MovieCard";
 
-import classes from "./MoviesList.module.scss";
+import styles from "./MoviesList.module.scss";
 
 const MoviesList: React.FC<{
   movies: MovieProps[];
@@ -12,11 +12,11 @@ const MoviesList: React.FC<{
   return (
     <div>
       <MainCard movies={props.movies} />
-      <div className={classes.container}>
+      <div className={styles.container}>
         <Filters movies={props.movies} onclick={props.onclick} />
-        <ul className={classes.moviesList}>
+        <ul className={styles.moviesList}>
           {props.movies.map((item, index) => (
-            <li key={index} className={classes.movieCard}>
+            <li key={index} className={styles.movieCard}>
               <MovieCard {...item} />
             </li>
           ))}
