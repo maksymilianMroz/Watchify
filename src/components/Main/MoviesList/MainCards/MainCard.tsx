@@ -7,8 +7,8 @@ const MainCard: React.FC<{ movies: MovieProps[] }> = (props) => {
       <div className={classes.mainCard}>
         <div className={classes.left}>
           <div className={classes.titleGroup}>
-            <h2 className={classes.header}>{props.movies[1].title}</h2>
-            <p className={classes.description}>{props.movies[1].summary}</p>
+            <h2 className={classes.header}>{props.movies[0].title}</h2>
+            <p className={classes.description}>{props.movies[0].summary}</p>
           </div>
           <div className={classes.btnGroup}>
             <button className={classes.btnWatch}>Obejrzyj</button>
@@ -19,7 +19,7 @@ const MainCard: React.FC<{ movies: MovieProps[] }> = (props) => {
         <div
           className={classes.right}
           style={{
-            backgroundImage: "url(" + props.movies[1].image + ")",
+            backgroundImage: "url(" + props.movies[0].image + ")",
           }}
         ></div>
       </div>

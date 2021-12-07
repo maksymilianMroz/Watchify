@@ -10,12 +10,14 @@ const Filters: React.FC<{
 
   let tempArr: string[] = [];
   useEffect(() => {
-    props.movies.forEach((item) => {
-      if (!tempArr.includes(item.genre)) {
-        tempArr.push(item.genre);
-      }
-    });
-    setGenres(tempArr);
+    if (!genres.length) {
+      props.movies.forEach((item) => {
+        if (!tempArr.includes(item.genre)) {
+          tempArr.push(item.genre);
+        }
+      });
+      setGenres(tempArr);
+    }
   }, [props.movies]);
 
   const handleFilterChange = (e: React.MouseEvent) => {
@@ -27,6 +29,15 @@ const Filters: React.FC<{
     <div className={classes.container}>
       <h3 className={classes.header}>Genres</h3>
       <ul className={classes.genreList}>
+        <li key={1.1} className={classes.genreListItem}>
+          <button
+            className={classes.filterButton}
+            data-filter="All"
+            onClick={handleFilterChange}
+          >
+            All
+          </button>
+        </li>
         {genres.map((item, index) => (
           <li key={index} className={classes.genreListItem}>
             <button

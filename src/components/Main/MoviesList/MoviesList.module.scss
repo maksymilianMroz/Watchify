@@ -1,7 +1,7 @@
 .container {
   display: flex;
   margin: 32px 0 0 0;
-  max-height: 650px;
+  max-height: 750px;
 }
 
 .moviesList {
@@ -15,6 +15,7 @@
   border: 3px solid #fff;
   border-radius: 15px;
   overflow-y: scroll;
+  width: 100%;
   /* width */
   &::-webkit-scrollbar {
     width: 10px;

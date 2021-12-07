@@ -15,6 +15,7 @@ export interface MovieProps {
 
 const App = () => {
   const [movies, setMovies] = useState<MovieProps[] | []>([]);
+  const [moviesCopy, setMoviesCopy] = useState<MovieProps[] | []>([]);
   const [activeGenre, setActiveGenre] = useState<string | null>("all");
   // const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -35,18 +36,34 @@ const App = () => {
       };
     });
     setMovies(transformedMovies);
+    !moviesCopy.length && setMoviesCopy(transformedMovies);
   };
 
   useEffect(() => {
     fetchMoviesHandler();
-  }, [movies]);
+  }, []);
 
   const onFilterChangeHandler = (data: string | null): void => {
     setActiveGenre(data);
   };
 
+  const movieFilteringHandler = async () => {
+    const moviesAfterFilters: any[] = [];
+
+    moviesCopy.forEach((movie) => {
+      if (movie.genre === activeGenre) {
+        moviesAfterFilters.push(movie);
+      }
+
+      if (activeGenre === "All") {
+        moviesAfterFilters.push(movie);
+      }
+    });
+    setMovies(moviesAfterFilters);
+  };
+
   useEffect(() => {
-    console.log(activeGenre);
+    movieFilteringHandler();
   }, [activeGenre]);
 
   return (
