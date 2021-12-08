@@ -8,7 +8,13 @@ import styles from "./MoviesList.module.scss";
 const MoviesList: React.FC<{
   movies: MovieProps[];
   onclick: (data: string | null) => void;
+  onselect: (data: string | null) => void;
 }> = (props) => {
+  const handleOnSelect = (e: React.MouseEvent) => {
+    const target = e.target as Element;
+    props.onselect(target.getAttribute("id"));
+  };
+
   return (
     <div>
       <MainCard movies={props.movies} />
@@ -16,7 +22,11 @@ const MoviesList: React.FC<{
         <Filters movies={props.movies} onclick={props.onclick} />
         <ul className={styles.moviesList}>
           {props.movies.map((item, index) => (
-            <li key={index} className={styles.movieCard}>
+            <li
+              key={index}
+              className={styles.movieCard}
+              onClick={handleOnSelect}
+            >
               <MovieCard {...item} />
             </li>
           ))}

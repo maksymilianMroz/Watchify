@@ -16,6 +16,7 @@ export interface MovieProps {
 const App = () => {
   const [movies, setMovies] = useState<MovieProps[] | []>([]);
   const [moviesCopy, setMoviesCopy] = useState<MovieProps[] | []>([]);
+  const [selectedMovie, setSelectedMovie] = useState<string | null>();
   const [activeGenre, setActiveGenre] = useState<string | null>("all");
   // const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -47,7 +48,7 @@ const App = () => {
     setActiveGenre(data);
   };
 
-  const movieFilteringHandler = async () => {
+  const movieFilteringHandler = () => {
     const moviesAfterFilters: any[] = [];
 
     moviesCopy.forEach((movie) => {
@@ -67,11 +68,23 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeGenre]);
 
+  const onMovieSelectHandler = (data: string | null): void => {
+    setSelectedMovie(data);
+  };
+
+  useEffect(() => {
+    console.log(selectedMovie);
+  }, [selectedMovie]);
+
   return (
     <div className="App">
       <Header />
       <SearchBar />
-      <Main movies={movies} onclick={(e) => onFilterChangeHandler(e)} />
+      <Main
+        movies={movies}
+        onclick={(e) => onFilterChangeHandler(e)}
+        onselect={(e) => onMovieSelectHandler(e)}
+      />
     </div>
   );
 };
