@@ -1,8 +1,9 @@
 .card {
-  //   background-color: #fff;
+  background-color: #e9ecf1;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  border: 2px solid #000;
   min-width: 140px;
   max-width: 140px;
   min-height: 240px;
@@ -11,7 +12,15 @@
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+img {
+  width: 113px;
+  height: 170px;
 }
 
 .favorites {
@@ -20,9 +29,8 @@
 }
 
 .cardBody {
-  padding: 6px 0;
+  padding: 0 0 16px 0;
   height: auto;
-  background-color: #fff;
   width: 100%;
   border-radius: 15px;
 }
@@ -31,4 +39,11 @@
   text-align: center;
   margin: 0;
   max-width: 140px;
+  color: #fff;
+  background: #000;
+  font-size: 0.85em;
+  border-radius: 0 0 11px 11px;
+  position: absolute;
+  bottom: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }

@@ -5,11 +5,12 @@ const MovieCard = ({ title, image, summary, trailer, genre }: MovieProps) => {
   return (
     <div
       className={styles.card}
-      style={{
-        backgroundImage: "url(" + image + ")",
-      }}
+      // style={{
+      //   backgroundImage: "url(" + image + ")",
+      // }}
     >
       <div className={styles.favorites}>x</div>
+      <img src={image} alt={title} />
       <div className={styles.cardBody}>
         <p className={styles.movieTitle}>{title}</p>
       </div>

@@ -19,7 +19,6 @@ const App = () => {
   const [activeGenre, setActiveGenre] = useState<string | null>("all");
   // const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchMoviesHandler = async () => {
     const response = await fetch(
       "https://itunes.apple.com/us/rss/topmovies/limit=100/json"
@@ -41,6 +40,7 @@ const App = () => {
 
   useEffect(() => {
     fetchMoviesHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onFilterChangeHandler = (data: string | null): void => {
@@ -64,6 +64,7 @@ const App = () => {
 
   useEffect(() => {
     movieFilteringHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeGenre]);
 
   return (
