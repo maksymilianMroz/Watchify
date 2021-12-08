@@ -17,7 +17,12 @@ const SearchBar = () => (
       })}
     </div>
     <li className={styles.listItems}>
-      <input className={styles.searchInput} type="text" placeholder="Search" />
+      <input
+        className={styles.searchInput}
+        type="text"
+        placeholder="Search"
+        disabled={true}
+      />
     </li>
   </ul>
 );

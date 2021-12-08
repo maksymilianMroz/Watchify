@@ -32,6 +32,7 @@
   font-weight: bold;
   font-size: 12px;
   text-decoration: none;
+  cursor: not-allowed;
 
   &:nth-child(1) {
     color: #fff;
@@ -52,7 +53,8 @@
   border-radius: 15px;
   border: none;
   padding: 0 12px;
-
+  border: 2px solid grey;
+  cursor: not-allowed;
   &::placeholder {
     color: grey;
   }

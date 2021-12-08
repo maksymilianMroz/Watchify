@@ -8,7 +8,6 @@
 .mainCard {
   width: 100%;
   height: fit-content;
-
   display: flex;
 
   .left {
@@ -22,10 +21,14 @@
       .header {
         margin: 0;
         padding: 24px 24px 0;
+        max-height: 90px;
+        min-height: 90px;
       }
       .description {
         margin: 0;
         padding: 16px 24px 24px;
+        max-height: 330px;
+        min-height: 330px;
       }
     }
 
@@ -65,6 +68,6 @@
     align-items: center;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 65%;
   }
 }

@@ -12,7 +12,7 @@ const Header = () => {
       <h1 className={styles.logo}>Watchify</h1>
       <div className={styles.tools}>
         <div>en</div>
-        <div>x</div>
+        <div className={styles.heart}></div>
         <UserAvatar />
       </div>
     </div>
