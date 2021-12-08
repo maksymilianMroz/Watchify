@@ -16,6 +16,7 @@
   align-items: center;
   position: relative;
   cursor: pointer;
+  position: relative;
 }
 
 img {
@@ -24,8 +25,33 @@ img {
 }
 
 .favorites {
-  display: flex;
-  justify-content: flex-end;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0 15px;
+  position: absolute;
+  right: 0;
+  top: 6px;
+}
+
+.favorites:before,
+.favorites:after {
+  position: absolute;
+  content: "";
+  left: 10px;
+  top: 13%;
+  width: 11px;
+  height: 18px;
+  background: #fff;
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.favorites:after {
+  left: 0px;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
 }
 
 .cardBody {
