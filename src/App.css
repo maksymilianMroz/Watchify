@@ -3,5 +3,7 @@
   background-color: #e9ecf1;
   width: 1800px;
   max-width: 1800px;
+  height: 1400px;
+  min-height: 1400px;
   margin: 15px 0;
 }
