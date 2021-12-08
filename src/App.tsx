@@ -16,6 +16,9 @@ export interface MovieProps {
 const App = () => {
   const [movies, setMovies] = useState<MovieProps[] | []>([]);
   const [moviesCopy, setMoviesCopy] = useState<MovieProps[] | []>([]);
+  const [mainCardMovie, setMainCardMovie] = useState<
+    MovieProps | null | undefined
+  >();
   const [selectedMovie, setSelectedMovie] = useState<string | null>();
   const [activeGenre, setActiveGenre] = useState<string | null>("all");
   // const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -37,12 +40,18 @@ const App = () => {
     });
     setMovies(transformedMovies);
     !moviesCopy.length && setMoviesCopy(transformedMovies);
+    setMainCardMovie(transformedMovies[0]);
   };
 
   useEffect(() => {
     fetchMoviesHandler();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    mainCardMovieHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [moviesCopy]);
 
   const onFilterChangeHandler = (data: string | null): void => {
     setActiveGenre(data);
@@ -72,8 +81,22 @@ const App = () => {
     setSelectedMovie(data);
   };
 
+  const mainCardMovieHandler = () => {
+    if (!mainCardMovie) {
+      setMainCardMovie(moviesCopy[3]);
+    }
+
+    if (mainCardMovie) {
+      const selected = moviesCopy.filter(
+        (movie) => movie.title === selectedMovie
+      );
+      setMainCardMovie(selected[0]);
+    }
+  };
+
   useEffect(() => {
-    console.log(selectedMovie);
+    mainCardMovieHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedMovie]);
 
   return (
@@ -84,6 +107,7 @@ const App = () => {
         movies={movies}
         onclick={(e) => onFilterChangeHandler(e)}
         onselect={(e) => onMovieSelectHandler(e)}
+        mainCardMovie={mainCardMovie}
       />
     </div>
   );

@@ -7,6 +7,7 @@ const Main: React.FC<{
   movies: MovieProps[];
   onclick: (data: string | null) => void;
   onselect: (data: string | null) => void;
+  mainCardMovie: MovieProps | null | undefined;
 }> = (props) => {
   return (
     <div className={styles.container}>
@@ -14,6 +15,7 @@ const Main: React.FC<{
         movies={props.movies}
         onclick={props.onclick}
         onselect={props.onselect}
+        mainCardMovie={props.mainCardMovie}
       />
     </div>
   );
