@@ -23,8 +23,8 @@ const App = () => {
   const [activeGenre, setActiveGenre] = useState<string | null>("All");
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  // For future use of favorites cart
-  const [favorites, setFavorites] = useState<string[]>([""]);
+  // For future use of favourites cart
+  const [favourites, setfavourites] = useState<string[]>([""]);
 
   const fetchMoviesHandler = async () => {
     const response = await fetch(
@@ -67,7 +67,7 @@ const App = () => {
   };
 
   const handleAddToFavorities = (data: string[]) => {
-    setFavorites(data);
+    setfavourites(data);
   };
 
   const onMovieSelectHandler = (data: string | null): void => {
@@ -122,7 +122,7 @@ const App = () => {
           onclick={(e) => onFilterChangeHandler(e)}
           onselect={(e) => onMovieSelectHandler(e)}
           mainCardMovie={mainCardMovie}
-          onAddFavorites={(e) => handleAddToFavorities(e)}
+          onAddfavourites={(e) => handleAddToFavorities(e)}
         />
       ) : (
         <div className="loading-container">

@@ -4,8 +4,8 @@ import styles from "./MovieCard.module.scss";
 
 const MovieCard: React.FC<{
   item: MovieProps;
-  onAddFavorites: (data: string | null) => void;
-  onRemoveFavorites: (data: string | null) => void;
+  onAddfavourites: (data: string | null) => void;
+  onRemovefavourites: (data: string | null) => void;
   favorities: string[];
 }> = (props) => {
   const handleAddToFavorities = (e: React.MouseEvent) => {
@@ -13,11 +13,11 @@ const MovieCard: React.FC<{
     const thisTarget = target.getAttribute("data-id");
 
     if (thisTarget !== null && !props.favorities.includes(thisTarget)) {
-      props.onAddFavorites(thisTarget);
+      props.onAddfavourites(thisTarget);
     }
 
     if (thisTarget !== null && props.favorities.includes(thisTarget)) {
-      props.onRemoveFavorites(thisTarget);
+      props.onRemovefavourites(thisTarget);
     }
   };
 
@@ -32,8 +32,8 @@ const MovieCard: React.FC<{
       <div
         className={
           !props.favorities.includes(props.item.title)
-            ? styles.unfavorites
-            : styles.favorites
+            ? styles.unfavourites
+            : styles.favourites
         }
         onClick={handleAddToFavorities}
         data-id={props.item.title}

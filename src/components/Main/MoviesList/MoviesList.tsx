@@ -11,13 +11,13 @@ const MoviesList: React.FC<{
   onclick: (data: string | null) => void;
   onselect: (data: string | null) => void;
   mainCardMovie: MovieProps | null | undefined;
-  onAddFavorites: (data: string[]) => void;
+  onAddfavourites: (data: string[]) => void;
 }> = (props) => {
   const [insideFav, setInsideFav] = useState<string[]>([""]);
 
   const handleAddToFavorities = (data: string | null) => {
     data && setInsideFav((prev) => [...prev, data]);
-    props.onAddFavorites(insideFav);
+    props.onAddfavourites(insideFav);
   };
 
   const handleRemoveToFavorities = (data: string | null) => {
@@ -28,7 +28,7 @@ const MoviesList: React.FC<{
       }
     }
     setInsideFav(tempArr);
-    props.onAddFavorites(insideFav);
+    props.onAddfavourites(insideFav);
   };
 
   const handleOnSelect = (e: React.MouseEvent) => {
@@ -50,8 +50,8 @@ const MoviesList: React.FC<{
             >
               <MovieCard
                 item={item}
-                onAddFavorites={handleAddToFavorities}
-                onRemoveFavorites={handleRemoveToFavorities}
+                onAddfavourites={handleAddToFavorities}
+                onRemovefavourites={handleRemoveToFavorities}
                 favorities={insideFav}
               />
             </li>
