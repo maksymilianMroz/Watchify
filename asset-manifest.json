@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Watchify/static/css/main.71e0a85c.chunk.css",
+    "main.js": "/Watchify/static/js/main.6f60dd59.chunk.js",
+    "main.js.map": "/Watchify/static/js/main.6f60dd59.chunk.js.map",
+    "runtime-main.js": "/Watchify/static/js/runtime-main.cbfd5c76.js",
+    "runtime-main.js.map": "/Watchify/static/js/runtime-main.cbfd5c76.js.map",
+    "static/js/2.2b7891be.chunk.js": "/Watchify/static/js/2.2b7891be.chunk.js",
+    "static/js/2.2b7891be.chunk.js.map": "/Watchify/static/js/2.2b7891be.chunk.js.map",
+    "index.html": "/Watchify/index.html",
+    "static/css/main.71e0a85c.chunk.css.map": "/Watchify/static/css/main.71e0a85c.chunk.css.map",
+    "static/js/2.2b7891be.chunk.js.LICENSE.txt": "/Watchify/static/js/2.2b7891be.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/Watchify/static/media/double-bubble-dark.9b90d46a.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cbfd5c76.js",
+    "static/js/2.2b7891be.chunk.js",
+    "static/css/main.71e0a85c.chunk.css",
+    "static/js/main.6f60dd59.chunk.js"
+  ]
+}
