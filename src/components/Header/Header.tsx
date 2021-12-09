@@ -1,5 +1,5 @@
 import Hamburger from "./Hamburger/Hamburger";
-import UserAvatar from "../Header/UserAvatar/UserAvatar";
+import UserAvatar from "./UserAvatar/UserAvatar";
 
 import styles from "./Header.module.scss";
 
