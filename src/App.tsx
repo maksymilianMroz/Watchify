@@ -20,8 +20,11 @@ const App = () => {
     MovieProps | null | undefined
   >();
   const [selectedMovie, setSelectedMovie] = useState<string | null>();
-  const [activeGenre, setActiveGenre] = useState<string | null>("all");
-  // const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [activeGenre, setActiveGenre] = useState<string | null>("All");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  // For future use of favorites cart
+  const [favorites, setFavorites] = useState<string[]>([""]);
 
   const fetchMoviesHandler = async () => {
     const response = await fetch(
@@ -41,17 +44,8 @@ const App = () => {
     setMovies(transformedMovies);
     !moviesCopy.length && setMoviesCopy(transformedMovies);
     setMainCardMovie(transformedMovies[0]);
+    setIsLoading(false);
   };
-
-  useEffect(() => {
-    fetchMoviesHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    mainCardMovieHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [moviesCopy]);
 
   const onFilterChangeHandler = (data: string | null): void => {
     setActiveGenre(data);
@@ -72,10 +66,9 @@ const App = () => {
     setMovies(moviesAfterFilters);
   };
 
-  useEffect(() => {
-    movieFilteringHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeGenre]);
+  const handleAddToFavorities = (data: string[]) => {
+    setFavorites(data);
+  };
 
   const onMovieSelectHandler = (data: string | null): void => {
     setSelectedMovie(data);
@@ -92,23 +85,54 @@ const App = () => {
       );
       setMainCardMovie(selected[0]);
     }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   useEffect(() => {
+    fetchMoviesHandler();
+  }, []);
+
+  useEffect(() => {
     mainCardMovieHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [moviesCopy]);
+
+  useEffect(() => {
+    movieFilteringHandler();
+  }, [activeGenre]);
+
+  useEffect(() => {
+    mainCardMovieHandler();
   }, [selectedMovie]);
 
   return (
     <div className="App">
       <Header />
       <SearchBar />
-      <Main
-        movies={movies}
-        onclick={(e) => onFilterChangeHandler(e)}
-        onselect={(e) => onMovieSelectHandler(e)}
-        mainCardMovie={mainCardMovie}
-      />
+      {!isLoading ? (
+        <Main
+          movies={movies}
+          onclick={(e) => onFilterChangeHandler(e)}
+          onselect={(e) => onMovieSelectHandler(e)}
+          mainCardMovie={mainCardMovie}
+          onAddFavorites={(e) => handleAddToFavorities(e)}
+        />
+      ) : (
+        <div className="loading-container">
+          <div className="loading-text">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

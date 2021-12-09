@@ -1,19 +1,46 @@
+import { useEffect, useState } from "react";
 import { MovieProps } from "../../../../App";
 import styles from "./MovieCard.module.scss";
 
-const MovieCard = ({ title, image, summary, trailer, genre }: MovieProps) => {
+const MovieCard: React.FC<{
+  item: MovieProps;
+  onAddFavorites: (data: string | null) => void;
+  onRemoveFavorites: (data: string | null) => void;
+  favorities: string[];
+}> = (props) => {
+  const handleAddToFavorities = (e: React.MouseEvent) => {
+    const target = e.target as Element;
+    const thisTarget = target.getAttribute("data-id");
+
+    if (thisTarget !== null && !props.favorities.includes(thisTarget)) {
+      props.onAddFavorites(thisTarget);
+    }
+
+    if (thisTarget !== null && props.favorities.includes(thisTarget)) {
+      props.onRemoveFavorites(thisTarget);
+    }
+  };
+
   return (
     <div
       className={styles.card}
       style={{
-        backgroundImage: "url(" + image + ")",
+        backgroundImage: "url(" + props.item.image + ")",
       }}
-      id={title}
+      id={props.item.title}
     >
-      <div className={styles.favorites}>x</div>
+      <div
+        className={
+          !props.favorities.includes(props.item.title)
+            ? styles.unfavorites
+            : styles.favorites
+        }
+        onClick={handleAddToFavorities}
+        data-id={props.item.title}
+      ></div>
       {/* <img src={image} alt={title} /> */}
       <div className={styles.cardBody}>
-        <p className={styles.movieTitle}>{title}</p>
+        <p className={styles.movieTitle}>{props.item.title}</p>
       </div>
     </div>
   );

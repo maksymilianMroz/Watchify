@@ -1,6 +1,15 @@
 import styles from "./SearchBar.module.scss";
 
-const buttonsArr: string[] = ["row", "of", "buttons", "that", "do", "nothing"];
+const buttonsArr: string[] = [
+  "row",
+  "of",
+  "buttons",
+  "that",
+  "do",
+  "literally",
+  "nothing",
+  "yet",
+];
 
 const SearchBar = () => (
   <ul className={styles.searchBarList}>
@@ -17,7 +26,12 @@ const SearchBar = () => (
       })}
     </div>
     <li className={styles.listItems}>
-      <input className={styles.searchInput} type="text" placeholder="Search" />
+      <input
+        className={styles.searchInput}
+        type="text"
+        placeholder="Search"
+        disabled={true}
+      />
     </li>
   </ul>
 );

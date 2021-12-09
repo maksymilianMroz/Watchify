@@ -27,8 +27,32 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 32px 0 0;
+  cursor: not-allowed;
 
-  div {
-    margin: 0 0 0 16px;
+  .heart {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0 15px;
+  }
+
+  .heart:before,
+  .heart:after {
+    position: absolute;
+    content: "";
+    left: 10px;
+    top: 13%;
+    width: 11px;
+    height: 18px;
+    background: red;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+  }
+
+  .heart:after {
+    left: 0px;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
   }
 }

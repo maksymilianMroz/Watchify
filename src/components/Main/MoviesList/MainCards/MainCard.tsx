@@ -5,7 +5,7 @@ const MainCard: React.FC<{
   movies: MovieProps[];
   mainCardMovie: MovieProps | null | undefined;
 }> = (props) => {
-  return props.movies.length ? (
+  return (
     <div className={styles.container}>
       <div className={styles.mainCard}>
         <div className={styles.left}>
@@ -18,7 +18,7 @@ const MainCard: React.FC<{
             </p>
           </div>
           <div className={styles.btnGroup}>
-            <button className={styles.btnWatch}>Obejrzyj</button>
+            <button className={styles.btnWatch}>Watch</button>
             <button className={styles.btnInfo}>More info</button>
           </div>
           <div className={styles.additionalBar}></div>
@@ -33,8 +33,6 @@ const MainCard: React.FC<{
         )}
       </div>
     </div>
-  ) : (
-    <div>Loading...</div>
   );
 };
 
