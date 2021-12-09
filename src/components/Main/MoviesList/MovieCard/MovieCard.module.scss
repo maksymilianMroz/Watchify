@@ -24,6 +24,16 @@ img {
   height: 170px;
 }
 
+.unfavorites {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0 15px;
+  position: absolute;
+  right: 0;
+  top: 6px;
+}
+
 .favorites {
   position: relative;
   width: 20px;
@@ -34,8 +44,8 @@ img {
   top: 6px;
 }
 
-.favorites:before,
-.favorites:after {
+.unfavorites:before,
+.unfavorites:after {
   position: absolute;
   content: "";
   left: 10px;
@@ -48,6 +58,26 @@ img {
   transform-origin: 0 100%;
 }
 
+.favorites:before,
+.favorites:after {
+  position: absolute;
+  content: "";
+  left: 10px;
+  top: 13%;
+  width: 11px;
+  height: 18px;
+  background: rgb(223, 8, 8);
+  border-radius: 50px 50px 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+.unfavorites:after {
+  left: 0px;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
 .favorites:after {
   left: 0px;
   transform: rotate(45deg);
@@ -55,7 +85,7 @@ img {
 }
 
 .cardBody {
-  padding: 0 0 16px 0;
+  padding: 0;
   height: auto;
   width: 100%;
   border-radius: 15px;

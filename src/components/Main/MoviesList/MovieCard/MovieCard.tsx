@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { MovieProps } from "../../../../App";
 import styles from "./MovieCard.module.scss";
 
 const MovieCard = ({ title, image, summary, trailer, genre }: MovieProps) => {
+  const [favorite, setFavorite] = useState<boolean>(false);
+
+  const handleAddToFavorities = () => {
+    setFavorite((prev) => !prev);
+  };
+
   return (
     <div
       className={styles.card}
@@ -10,7 +17,10 @@ const MovieCard = ({ title, image, summary, trailer, genre }: MovieProps) => {
       }}
       id={title}
     >
-      <div className={styles.favorites}>x</div>
+      <div
+        className={!favorite ? styles.unfavorites : styles.favorites}
+        onClick={handleAddToFavorities}
+      ></div>
       {/* <img src={image} alt={title} /> */}
       <div className={styles.cardBody}>
         <p className={styles.movieTitle}>{title}</p>

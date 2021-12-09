@@ -13,6 +13,7 @@ const MoviesList: React.FC<{
 }> = (props) => {
   const handleOnSelect = (e: React.MouseEvent) => {
     const target = e.target as Element;
+    e.stopPropagation();
     props.onselect(target.getAttribute("id"));
   };
 
