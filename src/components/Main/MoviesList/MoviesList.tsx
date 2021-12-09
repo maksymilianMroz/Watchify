@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { MovieProps } from "../../../App";
 import Filters from "../Filters/Filters";
 import MainCard from "./MainCards/MainCard";
@@ -10,10 +11,17 @@ const MoviesList: React.FC<{
   onclick: (data: string | null) => void;
   onselect: (data: string | null) => void;
   mainCardMovie: MovieProps | null | undefined;
+  onAddFavorites: (data: string[]) => void;
 }> = (props) => {
+  const [insideFav, setInsideFav] = useState<string[]>([]);
+
+  const handleAddToFavorities = (data: string | null) => {
+    data && setInsideFav((prev) => [...prev, data]);
+    props.onAddFavorites(insideFav);
+  };
+
   const handleOnSelect = (e: React.MouseEvent) => {
     const target = e.target as Element;
-
     target.getAttribute("id") && props.onselect(target.getAttribute("id"));
   };
 
@@ -29,7 +37,11 @@ const MoviesList: React.FC<{
               className={styles.movieCard}
               onClick={handleOnSelect}
             >
-              <MovieCard {...item} />
+              <MovieCard
+                item={item}
+                onAddFavorites={handleAddToFavorities}
+                favorities={insideFav}
+              />
             </li>
           ))}
         </ul>

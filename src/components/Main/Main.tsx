@@ -8,6 +8,7 @@ const Main: React.FC<{
   onclick: (data: string | null) => void;
   onselect: (data: string | null) => void;
   mainCardMovie: MovieProps | null | undefined;
+  onAddFavorites: (data: string[]) => void;
 }> = (props) => {
   return (
     <div className={styles.container}>
@@ -16,6 +17,7 @@ const Main: React.FC<{
         onclick={props.onclick}
         onselect={props.onselect}
         mainCardMovie={props.mainCardMovie}
+        onAddFavorites={props.onAddFavorites}
       />
     </div>
   );

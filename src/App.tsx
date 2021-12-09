@@ -23,6 +23,13 @@ const App = () => {
   const [activeGenre, setActiveGenre] = useState<string | null>("all");
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
+  // For future use of favorites cart
+  const [favorites, setFavorites] = useState<string[]>([]);
+
+  const handleAddToFavorities = (data: string[]) => {
+    setFavorites(data);
+  };
+
   const fetchMoviesHandler = async () => {
     const response = await fetch(
       "https://itunes.apple.com/us/rss/topmovies/limit=100/json"
@@ -111,6 +118,7 @@ const App = () => {
           onclick={(e) => onFilterChangeHandler(e)}
           onselect={(e) => onMovieSelectHandler(e)}
           mainCardMovie={mainCardMovie}
+          onAddFavorites={(e) => handleAddToFavorities(e)}
         />
       ) : (
         <div className="loading-container">
