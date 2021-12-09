@@ -20,11 +20,11 @@ const App = () => {
     MovieProps | null | undefined
   >();
   const [selectedMovie, setSelectedMovie] = useState<string | null>();
-  const [activeGenre, setActiveGenre] = useState<string | null>("all");
+  const [activeGenre, setActiveGenre] = useState<string | null>("All");
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // For future use of favorites cart
-  const [favorites, setFavorites] = useState<string[]>([]);
+  const [favorites, setFavorites] = useState<string[]>([""]);
 
   const handleAddToFavorities = (data: string[]) => {
     setFavorites(data);

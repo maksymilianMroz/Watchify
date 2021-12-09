@@ -5,16 +5,21 @@ import styles from "./MovieCard.module.scss";
 const MovieCard: React.FC<{
   item: MovieProps;
   onAddFavorites: (data: string | null) => void;
+  onRemoveFavorites: (data: string | null) => void;
   favorities: string[];
 }> = (props) => {
   const handleAddToFavorities = (e: React.MouseEvent) => {
     const target = e.target as Element;
+    const thisTarget = target.getAttribute("data-id");
 
-    if (target.getAttribute("data-id") !== null)
-      props.onAddFavorites(target.getAttribute("data-id"));
+    if (thisTarget !== null && !props.favorities.includes(thisTarget)) {
+      props.onAddFavorites(thisTarget);
+    }
+
+    if (thisTarget !== null && props.favorities.includes(thisTarget)) {
+      props.onRemoveFavorites(thisTarget);
+    }
   };
-
-  const favorite: boolean = false;
 
   return (
     <div
