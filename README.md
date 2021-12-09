@@ -2,7 +2,7 @@
 
 You can see this project [here](https://maksymilianmroz.github.io/Watchify/).
 
-Or you can clone project to your machine.
+Or you can clone project to your machine. \
 In the project directory, you can run: `yarn start`.
 
 Runs the app in the development mode.\
