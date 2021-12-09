@@ -21,7 +21,7 @@ const App = () => {
   >();
   const [selectedMovie, setSelectedMovie] = useState<string | null>();
   const [activeGenre, setActiveGenre] = useState<string | null>("all");
-  // const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const fetchMoviesHandler = async () => {
     const response = await fetch(
@@ -41,6 +41,7 @@ const App = () => {
     setMovies(transformedMovies);
     !moviesCopy.length && setMoviesCopy(transformedMovies);
     setMainCardMovie(transformedMovies[0]);
+    setIsLoading(false);
   };
 
   const onFilterChangeHandler = (data: string | null): void => {
@@ -86,34 +87,44 @@ const App = () => {
 
   useEffect(() => {
     fetchMoviesHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     mainCardMovieHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [moviesCopy]);
 
   useEffect(() => {
     movieFilteringHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeGenre]);
 
   useEffect(() => {
     mainCardMovieHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedMovie]);
 
   return (
     <div className="App">
       <Header />
       <SearchBar />
-      <Main
-        movies={movies}
-        onclick={(e) => onFilterChangeHandler(e)}
-        onselect={(e) => onMovieSelectHandler(e)}
-        mainCardMovie={mainCardMovie}
-      />
+      {!isLoading ? (
+        <Main
+          movies={movies}
+          onclick={(e) => onFilterChangeHandler(e)}
+          onselect={(e) => onMovieSelectHandler(e)}
+          mainCardMovie={mainCardMovie}
+        />
+      ) : (
+        <div className="loading-container">
+          <div className="loading-text">
+            <span>L</span>
+            <span>O</span>
+            <span>A</span>
+            <span>D</span>
+            <span>I</span>
+            <span>N</span>
+            <span>G</span>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
