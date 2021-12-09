@@ -94,18 +94,22 @@ const App = () => {
 
   useEffect(() => {
     fetchMoviesHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     mainCardMovieHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [moviesCopy]);
 
   useEffect(() => {
     movieFilteringHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeGenre]);
 
   useEffect(() => {
     mainCardMovieHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedMovie]);
 
   return (
