@@ -43,16 +43,6 @@ const App = () => {
     setMainCardMovie(transformedMovies[0]);
   };
 
-  useEffect(() => {
-    fetchMoviesHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    mainCardMovieHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [moviesCopy]);
-
   const onFilterChangeHandler = (data: string | null): void => {
     setActiveGenre(data);
   };
@@ -72,11 +62,6 @@ const App = () => {
     setMovies(moviesAfterFilters);
   };
 
-  useEffect(() => {
-    movieFilteringHandler();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeGenre]);
-
   const onMovieSelectHandler = (data: string | null): void => {
     setSelectedMovie(data);
   };
@@ -92,7 +77,27 @@ const App = () => {
       );
       setMainCardMovie(selected[0]);
     }
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
+
+  useEffect(() => {
+    fetchMoviesHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    mainCardMovieHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [moviesCopy]);
+
+  useEffect(() => {
+    movieFilteringHandler();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [activeGenre]);
 
   useEffect(() => {
     mainCardMovieHandler();

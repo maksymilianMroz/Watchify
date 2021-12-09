@@ -1,6 +1,15 @@
 import styles from "./SearchBar.module.scss";
 
-const buttonsArr: string[] = ["row", "of", "buttons", "that", "do", "nothing"];
+const buttonsArr: string[] = [
+  "row",
+  "of",
+  "buttons",
+  "that",
+  "do",
+  "literally",
+  "nothing",
+  "yet",
+];
 
 const SearchBar = () => (
   <ul className={styles.searchBarList}>
