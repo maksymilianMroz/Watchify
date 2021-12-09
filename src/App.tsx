@@ -26,10 +26,6 @@ const App = () => {
   // For future use of favorites cart
   const [favorites, setFavorites] = useState<string[]>([""]);
 
-  const handleAddToFavorities = (data: string[]) => {
-    setFavorites(data);
-  };
-
   const fetchMoviesHandler = async () => {
     const response = await fetch(
       "https://itunes.apple.com/us/rss/topmovies/limit=100/json"
@@ -68,6 +64,10 @@ const App = () => {
       }
     });
     setMovies(moviesAfterFilters);
+  };
+
+  const handleAddToFavorities = (data: string[]) => {
+    setFavorites(data);
   };
 
   const onMovieSelectHandler = (data: string | null): void => {
