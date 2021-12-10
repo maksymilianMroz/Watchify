@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Watchify/static/css/main.93f4d148.chunk.css",
-    "main.js": "/Watchify/static/js/main.bda9cce3.chunk.js",
-    "main.js.map": "/Watchify/static/js/main.bda9cce3.chunk.js.map",
+    "main.css": "/Watchify/static/css/main.6daf56e7.chunk.css",
+    "main.js": "/Watchify/static/js/main.cec71eb4.chunk.js",
+    "main.js.map": "/Watchify/static/js/main.cec71eb4.chunk.js.map",
     "runtime-main.js": "/Watchify/static/js/runtime-main.cbfd5c76.js",
     "runtime-main.js.map": "/Watchify/static/js/runtime-main.cbfd5c76.js.map",
-    "static/js/2.2b7891be.chunk.js": "/Watchify/static/js/2.2b7891be.chunk.js",
-    "static/js/2.2b7891be.chunk.js.map": "/Watchify/static/js/2.2b7891be.chunk.js.map",
+    "static/js/2.d0a106d1.chunk.js": "/Watchify/static/js/2.d0a106d1.chunk.js",
+    "static/js/2.d0a106d1.chunk.js.map": "/Watchify/static/js/2.d0a106d1.chunk.js.map",
     "index.html": "/Watchify/index.html",
-    "static/css/main.93f4d148.chunk.css.map": "/Watchify/static/css/main.93f4d148.chunk.css.map",
-    "static/js/2.2b7891be.chunk.js.LICENSE.txt": "/Watchify/static/js/2.2b7891be.chunk.js.LICENSE.txt",
+    "static/css/main.6daf56e7.chunk.css.map": "/Watchify/static/css/main.6daf56e7.chunk.css.map",
+    "static/js/2.d0a106d1.chunk.js.LICENSE.txt": "/Watchify/static/js/2.d0a106d1.chunk.js.LICENSE.txt",
     "static/media/index.css": "/Watchify/static/media/double-bubble-dark.9b90d46a.png"
   },
   "entrypoints": [
     "static/js/runtime-main.cbfd5c76.js",
-    "static/js/2.2b7891be.chunk.js",
-    "static/css/main.93f4d148.chunk.css",
-    "static/js/main.bda9cce3.chunk.js"
+    "static/js/2.d0a106d1.chunk.js",
+    "static/css/main.6daf56e7.chunk.css",
+    "static/js/main.cec71eb4.chunk.js"
   ]
 }
