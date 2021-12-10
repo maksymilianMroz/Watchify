@@ -27,5 +27,16 @@
         color: #626667;
       }
     }
+
+    .activeFilterButton {
+      background-color: #e9ecf1;
+      border: none;
+      padding: 0;
+      font-size: 0.9em;
+      color: #626667;
+      cursor: pointer;
+      text-align: left;
+      font-weight: bold;
+    }
   }
 }

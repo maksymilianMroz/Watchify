@@ -9,6 +9,7 @@ const Main: React.FC<{
   onselect: (data: string | null) => void;
   mainCardMovie: MovieProps | null | undefined;
   onAddfavourites: (data: string[]) => void;
+  activeGenre: string | null;
 }> = (props) => {
   return (
     <div className={styles.container}>
@@ -18,6 +19,7 @@ const Main: React.FC<{
         onselect={props.onselect}
         mainCardMovie={props.mainCardMovie}
         onAddfavourites={props.onAddfavourites}
+        activeGenre={props.activeGenre}
       />
     </div>
   );

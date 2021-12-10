@@ -22,8 +22,10 @@ const App = () => {
   const [selectedMovie, setSelectedMovie] = useState<string | null>();
   const [activeGenre, setActiveGenre] = useState<string | null>("All");
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [searchValue, setSearchValue] = useState<string>("");
 
   // For future use of favourites cart
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [favourites, setfavourites] = useState<string[]>([""]);
 
   const fetchMoviesHandler = async () => {
@@ -51,16 +53,25 @@ const App = () => {
     setActiveGenre(data);
   };
 
+  const onSearchInputChangeHandler = (data: string): void => {
+    setSearchValue(data);
+  };
+
   const movieFilteringHandler = () => {
     const moviesAfterFilters: any[] = [];
 
     moviesCopy.forEach((movie) => {
-      if (movie.genre === activeGenre) {
-        moviesAfterFilters.push(movie);
-      }
+      if (searchValue === "") {
+        if (movie.genre === activeGenre) {
+          moviesAfterFilters.push(movie);
+        }
 
-      if (activeGenre === "All") {
-        moviesAfterFilters.push(movie);
+        if (activeGenre === "All") {
+          moviesAfterFilters.push(movie);
+        }
+      } else {
+        movie.title.toLowerCase().includes(searchValue.toLowerCase()) &&
+          moviesAfterFilters.push(movie);
       }
     });
     setMovies(moviesAfterFilters);
@@ -105,7 +116,7 @@ const App = () => {
   useEffect(() => {
     movieFilteringHandler();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [activeGenre]);
+  }, [activeGenre, searchValue]);
 
   useEffect(() => {
     mainCardMovieHandler();
@@ -115,7 +126,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <SearchBar />
+      <SearchBar onSearch={onSearchInputChangeHandler} />
       {!isLoading ? (
         <Main
           movies={movies}
@@ -123,6 +134,7 @@ const App = () => {
           onselect={(e) => onMovieSelectHandler(e)}
           mainCardMovie={mainCardMovie}
           onAddfavourites={(e) => handleAddToFavorities(e)}
+          activeGenre={activeGenre}
         />
       ) : (
         <div className="loading-container">

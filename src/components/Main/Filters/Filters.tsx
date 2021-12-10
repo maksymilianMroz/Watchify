@@ -5,6 +5,7 @@ import styles from "./Filters.module.scss";
 const Filters: React.FC<{
   movies: MovieProps[];
   onclick: (data: string | null) => void;
+  activeGenre: string | null;
 }> = (props) => {
   const [genres, setGenres] = useState<string[]>([]);
 
@@ -32,7 +33,11 @@ const Filters: React.FC<{
       <ul className={styles.genreList}>
         <li key={1.1} className={styles.genreListItem}>
           <button
-            className={styles.filterButton}
+            className={
+              props.activeGenre === "All"
+                ? styles.activeFilterButton
+                : styles.filterButton
+            }
             data-filter="All"
             onClick={handleFilterChange}
           >
@@ -42,7 +47,11 @@ const Filters: React.FC<{
         {genres.map((item, index) => (
           <li key={index} className={styles.genreListItem}>
             <button
-              className={styles.filterButton}
+              className={
+                props.activeGenre === item
+                  ? styles.activeFilterButton
+                  : styles.filterButton
+              }
               data-filter={item}
               onClick={handleFilterChange}
             >
