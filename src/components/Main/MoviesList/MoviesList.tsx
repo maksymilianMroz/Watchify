@@ -38,7 +38,7 @@ const MoviesList: React.FC<{
   };
 
   return (
-    <div>
+    <div className={styles.movieListMainContainer}>
       <MainCard movies={props.movies} mainCardMovie={props.mainCardMovie} />
       <div className={styles.container}>
         <Filters
