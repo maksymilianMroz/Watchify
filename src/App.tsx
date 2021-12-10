@@ -25,6 +25,7 @@ const App = () => {
   const [searchValue, setSearchValue] = useState<string>("");
 
   // For future use of favourites cart
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [favourites, setfavourites] = useState<string[]>([""]);
 
   const fetchMoviesHandler = async () => {
@@ -133,6 +134,7 @@ const App = () => {
           onselect={(e) => onMovieSelectHandler(e)}
           mainCardMovie={mainCardMovie}
           onAddfavourites={(e) => handleAddToFavorities(e)}
+          activeGenre={activeGenre}
         />
       ) : (
         <div className="loading-container">

@@ -12,6 +12,7 @@ const MoviesList: React.FC<{
   onselect: (data: string | null) => void;
   mainCardMovie: MovieProps | null | undefined;
   onAddfavourites: (data: string[]) => void;
+  activeGenre: string | null;
 }> = (props) => {
   const [insideFav, setInsideFav] = useState<string[]>([""]);
 
@@ -40,7 +41,11 @@ const MoviesList: React.FC<{
     <div>
       <MainCard movies={props.movies} mainCardMovie={props.mainCardMovie} />
       <div className={styles.container}>
-        <Filters movies={props.movies} onclick={props.onclick} />
+        <Filters
+          movies={props.movies}
+          onclick={props.onclick}
+          activeGenre={props.activeGenre}
+        />
         <ul className={styles.moviesList}>
           {props.movies.map((item, index) => (
             <li

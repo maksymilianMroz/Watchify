@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import styles from "./SearchBar.module.scss";
 
 const buttonsArr: string[] = [
@@ -21,7 +22,6 @@ const SearchBar: React.FC<{ onSearch: (data: string) => void }> = (props) => {
       <div className={styles.listItems}>
         {buttonsArr.map((button, index) => {
           return (
-            // eslint-disable-next-line jsx-a11y/anchor-is-valid
             <li key={index} className={styles.listItem}>
               <a href="#" className={styles.button}>
                 {button}
